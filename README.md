@@ -2,6 +2,10 @@
 
 Framework de automatización de pruebas end-to-end y API con Cypress y TypeScript.
 
+## Reporte de Pruebas
+
+Ver reporte en GitHub Pages: https://juanfranciscobumo.github.io/cypress-automation/
+
 ## Requisitos previos
 
 - Node.js >= 18
