@@ -19,5 +19,7 @@ export default defineConfig({
   },
   env: {
     apiUrl: "https://jsonplaceholder.typicode.com",
+    allure: true,
+    allureLogAsserts: true,
   },
 });
