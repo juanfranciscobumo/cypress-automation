@@ -13,8 +13,6 @@
     "report:merge": "mochawesome-merge 'cypress/reports/*.json' > cypress/reports/merged-report.json",
     "report:html": "marge cypress/reports/merged-report.json --reportDir cypress/reports/html --overwrite",
     "report:generate": "npm run cypress:run:api && npm run report:merge && npm run report:html",
-    "allure:open": "allure open allure-results",
-    "allure:serve": "allure serve allure-results",
     "lint": "eslint cypress/ --ext .ts",
     "lint:fix": "eslint cypress/ --ext .ts --fix",
     "format": "prettier --write 'cypress/**/*.ts'",
