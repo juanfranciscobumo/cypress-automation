@@ -1,0 +1,16 @@
+{
+  "name": "cypress-automation",
+  "version": "1.0.0",
+  "description": "Automatización de pruebas con Cypress y TypeScript",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:headless": "cypress run --browser chrome --headless",
+    "cypress:run:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.0.0"
+  }
+}
