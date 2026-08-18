@@ -8,7 +8,7 @@
 [![Report](https://img.shields.io/badge/Report-Mochawesome-FF6B6B?style=flat-square)](https://github.com/adamgruber/mochawesome)
 [![Pages](https://img.shields.io/badge/Pages-GitHub%20Pages-222222?style=flat-square&logo=github)](https://pages.github.com/)
 
-Framework de automatización de pruebas API con Cypress y TypeScript.
+Framework de automatización de pruebas API con Cypress y TypeScript para [JSONPlaceholder](https://jsonplaceholder.typicode.com).
 
 ## Reporte de Pruebas
 
@@ -32,10 +32,10 @@ Ver reporte en GitHub Pages: https://juanfranciscobumo.github.io/cypress-automat
 │  └─────────────────────────────────────────────────────┘   │
 │                          │                                  │
 │                          ▼                                  │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │  Mochawesome│    │   Allure    │    │  GitHub     │     │
-│  │  Reporter   │    │  Reporter   │    │  Pages      │     │
-│  └─────────────┘    └─────────────┘    └─────────────┘     │
+│  ┌─────────────┐    ┌─────────────┐                        │
+│  │  Mochawesome│    │  GitHub     │                        │
+│  │  Reporter   │    │  Pages      │                        │
+│  └─────────────┘    └─────────────┘                        │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -67,7 +67,6 @@ npm install
 | `npm run format` | Formatea código con Prettier |
 | `npm run format:check` | Verifica formateo con Prettier |
 | `npm run report:generate` | Genera reporte HTML completo |
-| `npm run allure:open` | Abre reporte Allure |
 
 ## Estructura del proyecto
 
@@ -98,7 +97,7 @@ npm install
 └── package.json
 ```
 
-## Custom Commands disponibles
+## Custom Commands
 
 ### API
 - `cy.apiGet<T>(endpoint)` - Petición GET
@@ -110,7 +109,26 @@ npm install
 - `cy.login(username, password)` - Login con sesión
 
 ### Fixtures
-- `cy.getFixture<T>(fixtureName)` - Obtener datos de fixtures
+- `cy.getFixture<T>(fixtureName)` - Obtener datos de fixtures tipados
+
+## Tests incluidos (11)
+
+### Posts (6)
+- GET all posts
+- GET post by ID
+- POST create post
+- PUT update post
+- DELETE post
+- GET posts by userId
+
+### Users (3)
+- GET all users
+- GET user by ID
+- GET user posts
+
+### Comments (2)
+- GET all comments
+- GET comments by postId
 
 ## Ejemplo de uso
 
@@ -138,7 +156,7 @@ Se utiliza [JSONPlaceholder](https://jsonplaceholder.typicode.com) como API de p
 https://jsonplaceholder.typicode.com
 ```
 
-### Endpoints disponibles
+### Endpoints testeados
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
@@ -153,15 +171,6 @@ https://jsonplaceholder.typicode.com
 | GET | `/users/:id/posts` | Obtener posts de un usuario |
 | GET | `/comments` | Obtener todos los comentarios |
 | GET | `/comments?postId=:id` | Obtener comentarios por post |
-| GET | `/albums` | Obtener todos los álbumes |
-| GET | `/todos` | Obtener todas las tareas |
-
-### Headers requeridos
-```json
-{
-  "Content-Type": "application/json"
-}
-```
 
 ## Configuración
 
@@ -179,5 +188,4 @@ La configuración principal se encuentra en `cypress.config.ts`:
 - GitHub Actions (CI/CD)
 - ESLint + Prettier (Code Quality)
 - Mochawesome (HTML Reports)
-- Allure (Advanced Reports)
 - GitHub Pages (Report Deployment)
