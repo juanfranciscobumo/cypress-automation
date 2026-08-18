@@ -9,6 +9,13 @@ export default defineConfig({
     screenshotOnRunFailure: true,
     supportFile: "cypress/support/e2e.ts",
     specPattern: "cypress/e2e/**/*.cy.ts",
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "cypress/reports",
+      overwrite: false,
+      html: true,
+      json: true,
+    },
   },
   env: {
     apiUrl: "https://jsonplaceholder.typicode.com",
